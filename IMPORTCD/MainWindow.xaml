@@ -1,0 +1,52 @@
+﻿<Window x:Class="IMPORTCD.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:IMPORTCD"
+        mc:Ignorable="d"
+        Title="CD-Hippocrate" Height="450" Width="360">
+    <Window.Effect>
+        <DropShadowEffect/>
+    </Window.Effect>
+    <Grid Margin="0,0,2,0">
+        <ProgressBar HorizontalAlignment="Left" Height="27" Margin="40,218,0,0" VerticalAlignment="Top" Width="273">
+           
+        </ProgressBar>
+        <Button Content="EJECTER" HorizontalAlignment="Left" Margin="40,329,0,0" VerticalAlignment="Top" Width="273" Cursor="ArrowCD">
+            <Button.Effect>
+                <DropShadowEffect Color="#FF1C3BFB"/>
+            </Button.Effect>
+        </Button>
+        <Button x:Name="PACS" Content="PACS" HorizontalAlignment="Left" Margin="40,262,0,0" VerticalAlignment="Top" Width="273" Click="myButton_PACS">
+            <Button.Effect>
+                <DropShadowEffect Color="#FF3CD40F"/>
+            </Button.Effect>
+        </Button>
+        <Button Content="QUITTER" HorizontalAlignment="Left" Margin="40,373,0,0" VerticalAlignment="Top" Width="273" Click="myButton_Quit">
+            <Button.Effect>
+                <DropShadowEffect Color="#FFC10707"/>
+            </Button.Effect>
+        </Button>
+        <Grid HorizontalAlignment="Left" Height="188" Margin="40,25,0,0" VerticalAlignment="Top" Width="273">
+            <Label Content="PATIENT" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="253">
+                <Label.Effect>
+                    <DropShadowEffect/>
+                </Label.Effect>
+            </Label>
+            <Label Content="DOSSIER" HorizontalAlignment="Left" Margin="10,36,0,0" VerticalAlignment="Top" Width="253">
+                <Label.Effect>
+                    <DropShadowEffect/>
+                </Label.Effect>
+            </Label>
+        </Grid>
+        <ListView HorizontalAlignment="Left" Height="100" Margin="53,100,0,0" VerticalAlignment="Top" Width="248">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+    </Grid>
+</Window>
