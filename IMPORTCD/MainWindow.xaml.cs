@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Runtime.InteropServices;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -38,6 +39,32 @@ namespace IMPORTCD
         {
             
             this.Close();
+        }
+
+        private void myButton_Eject(object sender, RoutedEventArgs e)
+        {
+            CDROM.Commands.Eject();
+        }
+    }
+}
+
+namespace CDROM
+{
+    public class Commands
+    {
+        [DllImport("winmm.dll")]
+        static extern Int32 mciSendString(string command, string buffer, int bufferSize, IntPtr hwndCallback);
+
+        public static void Eject()
+        {
+            string rt = "";
+            mciSendString("set CDAudio door open", rt, 127, IntPtr.Zero);
+        }
+
+        public static void Close()
+        {
+            string rt = "";
+            mciSendString("set CDAudio door closed", rt, 127, IntPtr.Zero);
         }
     }
 }

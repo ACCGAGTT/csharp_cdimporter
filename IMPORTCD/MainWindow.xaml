@@ -13,7 +13,7 @@
         <ProgressBar HorizontalAlignment="Left" Height="27" Margin="40,218,0,0" VerticalAlignment="Top" Width="273">
            
         </ProgressBar>
-        <Button Content="EJECTER" HorizontalAlignment="Left" Margin="40,329,0,0" VerticalAlignment="Top" Width="273" Cursor="ArrowCD">
+        <Button Content="EJECTER" HorizontalAlignment="Left" Margin="40,329,0,0" VerticalAlignment="Top" Width="273" Cursor="ArrowCD" Click="myButton_Eject">
             <Button.Effect>
                 <DropShadowEffect Color="#FF1C3BFB"/>
             </Button.Effect>
