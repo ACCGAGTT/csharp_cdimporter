@@ -5,42 +5,45 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:IMPORTCD"
         mc:Ignorable="d"
-        Title="CD-Hippocrate" Height="450" Width="360">
+        Title="CD-Hippocrate" Height="460" Width="370" BorderThickness="2" Background="#FF76807E">
     <Window.Effect>
         <DropShadowEffect/>
     </Window.Effect>
     <Grid Margin="0,0,2,0">
-        <ProgressBar HorizontalAlignment="Left" Height="27" Margin="40,218,0,0" VerticalAlignment="Top" Width="273">
-           
+        <Grid.Effect>
+            <DropShadowEffect/>
+        </Grid.Effect>
+        <ProgressBar HorizontalAlignment="Left" Height="27" Margin="40,204,0,0" VerticalAlignment="Top" Width="273">
+
         </ProgressBar>
-        <Button Content="EJECTER" HorizontalAlignment="Left" Margin="40,329,0,0" VerticalAlignment="Top" Width="273" Cursor="ArrowCD" Click="myButton_Eject">
+        <Button Content="EJECTER" HorizontalAlignment="Left" Margin="40,320,0,0" VerticalAlignment="Top" Width="273" Cursor="ArrowCD" Click="myButton_Eject" FontWeight="Bold" FontSize="20">
             <Button.Effect>
                 <DropShadowEffect Color="#FF1C3BFB"/>
             </Button.Effect>
         </Button>
-        <Button x:Name="PACS" Content="PACS" HorizontalAlignment="Left" Margin="40,262,0,0" VerticalAlignment="Top" Width="273" Click="myButton_PACS">
+        <Button x:Name="PACS" Content="PACS" HorizontalAlignment="Left" Margin="40,250,0,0" VerticalAlignment="Top" Width="273" Click="myButton_PACS" FontWeight="Bold" FontSize="20">
             <Button.Effect>
                 <DropShadowEffect Color="#FF3CD40F"/>
             </Button.Effect>
         </Button>
-        <Button Content="QUITTER" HorizontalAlignment="Left" Margin="40,373,0,0" VerticalAlignment="Top" Width="273" Click="myButton_Quit">
+        <Button Content="QUITTER" HorizontalAlignment="Left" Margin="40,365,0,0" VerticalAlignment="Top" Width="273" Click="myButton_Quit" FontWeight="Bold" FontSize="20">
             <Button.Effect>
                 <DropShadowEffect Color="#FFC10707"/>
             </Button.Effect>
         </Button>
         <Grid HorizontalAlignment="Left" Height="188" Margin="40,25,0,0" VerticalAlignment="Top" Width="273">
-            <Label Content="PATIENT" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="253">
+            <Label x:Name="patient_Name" Content="PATIENT" HorizontalAlignment="Left" VerticalAlignment="Top" Width="253" FontWeight="Bold" DataContextChanged="patient_name">
                 <Label.Effect>
-                    <DropShadowEffect/>
+                    <DropShadowEffect Color="#FFECECEC"/>
                 </Label.Effect>
             </Label>
-            <Label Content="DOSSIER" HorizontalAlignment="Left" Margin="10,36,0,0" VerticalAlignment="Top" Width="253">
+            <Label Content="DOSSIER" HorizontalAlignment="Left" Margin="0,25,0,0" VerticalAlignment="Top" Width="253" FontWeight="Bold">
                 <Label.Effect>
-                    <DropShadowEffect/>
+                    <DropShadowEffect Color="#FFE2DEDE"/>
                 </Label.Effect>
             </Label>
         </Grid>
-        <ListView HorizontalAlignment="Left" Height="100" Margin="53,100,0,0" VerticalAlignment="Top" Width="248">
+        <ListView HorizontalAlignment="Left" Height="100" Margin="40,86,0,0" VerticalAlignment="Top" Width="273">
             <ListView.View>
                 <GridView>
                     <GridViewColumn/>

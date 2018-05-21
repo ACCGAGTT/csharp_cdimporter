@@ -31,19 +31,34 @@ namespace IMPORTCD
 
         private void myButton_PACS(object sender, RoutedEventArgs e)
         {
-            foreach (var drive in DriveInfo.GetDrives().Where(d => d.DriveType == DriveType.CDRom))
-                MessageBox.Show(drive.Name + " " + drive.IsReady.ToString());
+            var dicom = EvilDICOM.Core.DICOMObject.Read(@"D:\DEV\test_data\test2\DICOMDIR");
+            MessageBox.Show(dicom.FindFirst("00100010").DData.ToString());
+            
+
         }
 
         private void myButton_Quit(object sender, RoutedEventArgs e)
         {
-            
+            System.Media.SoundPlayer click = new System.Media.SoundPlayer(@"C:\Windows\media\Windows Shutdown.wav");
+            click.Play();
+            System.Threading.Thread.Sleep(1000);            
             this.Close();
         }
 
         private void myButton_Eject(object sender, RoutedEventArgs e)
         {
+
+            System.Media.SoundPlayer click = new System.Media.SoundPlayer(@"C:\Windows\media\Windows Hardware Remove.wav");
+            click.Play();
+            var drive = DriveInfo.GetDrives().Where(d => d.DriveType == DriveType.CDRom);
+            MessageBox.Show(drive.GetType().ToString());
+           
             CDROM.Commands.Eject();
+        }
+
+        private void patient_name(object sender, DependencyPropertyChangedEventArgs e)
+        {
+
         }
     }
 }
