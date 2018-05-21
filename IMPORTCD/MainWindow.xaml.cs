@@ -16,53 +16,6 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using EvilDICOM.Core;
 
-namespace IMPORTCD
-{
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
-    public partial class MainWindow : Window
-    {
-        public MainWindow()
-        {
-            InitializeComponent();
-            
-        }
-
-        private void myButton_PACS(object sender, RoutedEventArgs e)
-        {
-            var dicom = EvilDICOM.Core.DICOMObject.Read(@"D:\DEV\test_data\test2\DICOMDIR");
-            MessageBox.Show(dicom.FindFirst("00100010").DData.ToString());
-            
-
-        }
-
-        private void myButton_Quit(object sender, RoutedEventArgs e)
-        {
-            System.Media.SoundPlayer click = new System.Media.SoundPlayer(@"C:\Windows\media\Windows Shutdown.wav");
-            click.Play();
-            System.Threading.Thread.Sleep(1000);            
-            this.Close();
-        }
-
-        private void myButton_Eject(object sender, RoutedEventArgs e)
-        {
-
-            System.Media.SoundPlayer click = new System.Media.SoundPlayer(@"C:\Windows\media\Windows Hardware Remove.wav");
-            click.Play();
-            var drive = DriveInfo.GetDrives().Where(d => d.DriveType == DriveType.CDRom);
-            MessageBox.Show(drive.GetType().ToString());
-           
-            CDROM.Commands.Eject();
-        }
-
-        private void patient_name(object sender, DependencyPropertyChangedEventArgs e)
-        {
-
-        }
-    }
-}
-
 namespace CDROM
 {
     public class Commands
@@ -83,3 +36,49 @@ namespace CDROM
         }
     }
 }
+
+namespace IMPORTCD
+{
+    /// <summary>
+    /// Interaction logic for MainWindow.xaml
+    /// </summary>
+    public partial class MainWindow : Window
+    {
+        public MainWindow()
+        {
+            InitializeComponent();
+            
+        }
+
+        private void myButton_PACS(object sender, RoutedEventArgs e)
+        {
+            System.Media.SoundPlayer click = new System.Media.SoundPlayer(@"C:\Windows\media\Windows Message Nudge.wav");
+            click.Play();
+            var dicom = EvilDICOM.Core.DICOMObject.Read(@"\\thebeast-laptop\d$\DEV\test_data\test2\DICOMDIR");
+            MessageBox.Show(dicom.FindFirst("00100010").DData.ToString());           
+
+        }
+
+        private void myButton_Quit(object sender, RoutedEventArgs e)
+        {
+            System.Media.SoundPlayer click = new System.Media.SoundPlayer(@"C:\Windows\media\Windows Shutdown.wav");
+            click.Play();
+            System.Threading.Thread.Sleep(1000);            
+            this.Close();
+        }
+
+        private void myButton_Eject(object sender, RoutedEventArgs e)
+        {
+
+            System.Media.SoundPlayer click = new System.Media.SoundPlayer(@"C:\Windows\media\Windows Hardware Remove.wav");
+            click.Play();         
+            CDROM.Commands.Eject();
+        }
+
+        private void patient_name(object sender, DependencyPropertyChangedEventArgs e)
+        {
+
+        }
+    }
+}
+
