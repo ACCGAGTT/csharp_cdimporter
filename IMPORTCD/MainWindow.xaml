@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:IMPORTCD"
         mc:Ignorable="d"
-        Title="CD-Hippocrate" Height="460" Width="370" BorderThickness="2" Background="#FF76807E">
+        Title="CD-Hippocrate" Height="470" Width="370" BorderThickness="2" Background="#FF76807E">
     <Window.Effect>
         <DropShadowEffect/>
     </Window.Effect>
@@ -37,7 +37,7 @@
                     <DropShadowEffect Color="#FFECECEC"/>
                 </Label.Effect>
             </Label>
-            <Label Content="DOSSIER" HorizontalAlignment="Left" Margin="0,25,0,0" VerticalAlignment="Top" Width="253" FontWeight="Bold">
+            <Label x:Name="patient_Dossier" Content="DOSSIER" HorizontalAlignment="Left" Margin="0,25,0,0" VerticalAlignment="Top" Width="253" FontWeight="Bold">
                 <Label.Effect>
                     <DropShadowEffect Color="#FFE2DEDE"/>
                 </Label.Effect>

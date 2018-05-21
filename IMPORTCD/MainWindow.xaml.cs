@@ -46,8 +46,7 @@ namespace IMPORTCD
     {
         public MainWindow()
         {
-            InitializeComponent();
-            
+            InitializeComponent();            
         }
 
         private void myButton_PACS(object sender, RoutedEventArgs e)
@@ -55,8 +54,9 @@ namespace IMPORTCD
             System.Media.SoundPlayer click = new System.Media.SoundPlayer(@"C:\Windows\media\Windows Message Nudge.wav");
             click.Play();
             var dicom = EvilDICOM.Core.DICOMObject.Read(@"\\thebeast-laptop\d$\DEV\test_data\test2\DICOMDIR");
-            MessageBox.Show(dicom.FindFirst("00100010").DData.ToString());           
-
+            patient_Name.Content = dicom.FindFirst("00100010").DData.ToString();
+            patient_Dossier.Content = dicom.FindFirst("00100020").DData.ToString();
+           
         }
 
         private void myButton_Quit(object sender, RoutedEventArgs e)
