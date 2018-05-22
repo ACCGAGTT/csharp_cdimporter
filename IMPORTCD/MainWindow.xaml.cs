@@ -73,6 +73,9 @@ namespace IMPORTCD
 
                             patient_Name.Content = dicomObject.FindFirst("00100010").DData.ToString();
                             patient_Dossier.Content = dicomObject.FindFirst("00100020").DData.ToString();
+                           // List<object> studies  = new List<object>();
+                            list_studies.ItemsSource = dicomObject.FindFirst("00041500").DData.ToString();
+                            
                             
                         }
                         else
@@ -86,15 +89,13 @@ namespace IMPORTCD
                     }
                     else
                     {
-                        //System.Media.SoundPlayer click_error = new System.Media.SoundPlayer(@"C:\Windows\media\Windows Critical Stop.wav");
-                        //click_error.Play();
+                        System.Media.SoundPlayer click_error = new System.Media.SoundPlayer(@"C:\Windows\media\Windows Critical Stop.wav");
+                        click_error.Play();
                         patient_Name.Content = "CD NON-CONFORME";
                         patient_Dossier.Content = "VEUILLEZ CONTACTER LA FILMOTHEQUE";
                         CDROM.Commands.Eject();
-                    }
-                    
-                             
-                
+                    }       
+
             }
             catch
             {
