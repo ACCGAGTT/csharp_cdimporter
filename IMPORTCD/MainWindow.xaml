@@ -14,18 +14,18 @@
         <ProgressBar HorizontalAlignment="Left" Height="27" Margin="40,204,0,0" VerticalAlignment="Top" Width="273">
 
         </ProgressBar>
-        <Button Content="EJECTER" HorizontalAlignment="Left" Margin="125,319,0,0" VerticalAlignment="Top" Width="100" Cursor="ArrowCD" Click="myButton_Eject" FontWeight="Bold" FontSize="14" Opacity="0.8">
+        <Button Content="EJECTER" HorizontalAlignment="Left" Margin="125,319,0,0" VerticalAlignment="Top" Width="100" Cursor="ArrowCD" Click="myButton_Eject" FontWeight="Bold" FontSize="14" Opacity="0.8" FontFamily="Lato">
 
         </Button>
-        <Button x:Name="PACS" Content="IMPORTER" HorizontalAlignment="Left" Margin="125,250,0,0" VerticalAlignment="Top" Width="100" Click="myButton_PACS" FontWeight="Bold" FontSize="14" Opacity="0.8" FontFamily="Tempus Sans ITC">
+        <Button x:Name="PACS" Content="IMPORTER" HorizontalAlignment="Left" Margin="125,250,0,0" VerticalAlignment="Top" Width="100" Click="myButton_PACS" FontWeight="Bold" FontSize="14" Opacity="0.8" FontFamily="Lato">
 
         </Button>
-        <Button Content="QUITTER" HorizontalAlignment="Left" Margin="125,365,0,0" VerticalAlignment="Top" Width="100" Click="myButton_Quit" FontWeight="Bold" FontSize="14" Opacity="0.8">
+        <Button Content="QUITTER" HorizontalAlignment="Left" Margin="125,365,0,0" VerticalAlignment="Top" Width="100" Click="myButton_Quit" FontWeight="Bold" FontSize="14" Opacity="0.8" FontFamily="Lato">
 
         </Button>
         <Grid HorizontalAlignment="Left" Height="182" Margin="40,10,0,0" VerticalAlignment="Top" Width="294">
-            <Label x:Name="patient_Name" Content="PATIENT" HorizontalAlignment="Left" VerticalAlignment="Top" Width="273" FontWeight="Bold" DataContextChanged="patient_name" Margin="0,-8,0,0" FontSize="16"/>
-            <Label x:Name="patient_Dossier" Content="DOSSIER" HorizontalAlignment="Left" Margin="0,23,0,0" VerticalAlignment="Top" Width="284" FontWeight="Bold" FontSize="14"/>
+            <Label x:Name="patient_Name" Content="PATIENT" HorizontalAlignment="Left" VerticalAlignment="Top" Width="273" FontWeight="Bold" DataContextChanged="patient_name" Margin="0,-8,0,0" FontSize="16" FontFamily="Lato"/>
+            <Label x:Name="patient_Dossier" Content="DOSSIER" HorizontalAlignment="Left" Margin="0,23,0,0" VerticalAlignment="Top" Width="284" FontWeight="Bold" FontSize="14" FontFamily="Lato"/>
         </Grid>
         <ListView x:Name="list_studies" HorizontalAlignment="Left" Height="100" Margin="40,86,0,0" VerticalAlignment="Top" Width="273" Background="#FF97BED8" BorderBrush="#FFB7C4DA" Foreground="#FF012991">
             <ListView.View>
