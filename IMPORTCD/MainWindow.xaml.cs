@@ -51,12 +51,55 @@ namespace IMPORTCD
 
         private void myButton_PACS(object sender, RoutedEventArgs e)
         {
-            System.Media.SoundPlayer click = new System.Media.SoundPlayer(@"C:\Windows\media\Windows Message Nudge.wav");
-            click.Play();
-            var dicom = EvilDICOM.Core.DICOMObject.Read(@"\\thebeast-laptop\d$\DEV\test_data\test2\DICOMDIR");
-            patient_Name.Content = dicom.FindFirst("00100010").DData.ToString();
-            patient_Dossier.Content = dicom.FindFirst("00100020").DData.ToString();
-           
+            try
+            {
+                System.Media.SoundPlayer click = new System.Media.SoundPlayer(@"C:\Windows\media\Windows Message Nudge.wav");
+                click.Play();
+                DriveInfo[] lecteurCD = DriveInfo.GetDrives().Where(drive => drive.DriveType == DriveType.CDRom).ToArray();
+                    
+                    if (lecteurCD[0].IsReady)
+                    {
+                        var cd_rom = lecteurCD[0].Name.ToString();
+
+                        var files = new DirectoryInfo(cd_rom);
+                        FileInfo[] fileInfo = files.GetFiles("DICOMDIR", SearchOption.AllDirectories);
+                        
+
+                        if (fileInfo.Length != 0)
+                        {
+                            FileInfo dicomdir = new FileInfo(fileInfo[0].FullName.ToString());
+                            var dicomInfo = dicomdir.FullName;
+                            var dicomObject = EvilDICOM.Core.DICOMObject.Read(dicomInfo);
+
+                            patient_Name.Content = dicomObject.FindFirst("00100010").DData.ToString();
+                            patient_Dossier.Content = dicomObject.FindFirst("00100020").DData.ToString();
+                            
+                        }
+                        else
+                        {
+                            System.Media.SoundPlayer click_error = new System.Media.SoundPlayer(@"C:\Windows\media\Windows Critical Stop.wav");
+                            click_error.Play();
+                            patient_Name.Content = "CD NON-CONFORME";
+                            patient_Dossier.Content = "VEUILLEZ CONTACTER LA FILMOTHEQUE";
+                        }
+
+                    }
+                    else
+                    {
+                        //System.Media.SoundPlayer click_error = new System.Media.SoundPlayer(@"C:\Windows\media\Windows Critical Stop.wav");
+                        //click_error.Play();
+                        patient_Name.Content = "CD NON-CONFORME";
+                        patient_Dossier.Content = "VEUILLEZ CONTACTER LA FILMOTHEQUE";
+                        CDROM.Commands.Eject();
+                    }
+                    
+                             
+                
+            }
+            catch
+            {
+
+            }
         }
 
         private void myButton_Quit(object sender, RoutedEventArgs e)

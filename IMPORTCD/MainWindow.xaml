@@ -31,23 +31,21 @@
                 <DropShadowEffect Color="#FFC10707"/>
             </Button.Effect>
         </Button>
-        <Grid HorizontalAlignment="Left" Height="203" Margin="40,10,0,0" VerticalAlignment="Top" Width="273">
-            <Label x:Name="patient_Name" Content="PATIENT" HorizontalAlignment="Left" VerticalAlignment="Top" Width="253" FontWeight="Bold" DataContextChanged="patient_name" Margin="0,-8,0,0" FontSize="16">
+        <Grid HorizontalAlignment="Left" Height="203" Margin="40,10,0,0" VerticalAlignment="Top" Width="294">
+            <Label x:Name="patient_Name" Content="PATIENT" HorizontalAlignment="Left" VerticalAlignment="Top" Width="273" FontWeight="Bold" DataContextChanged="patient_name" Margin="0,-8,0,0" FontSize="16">
                 <Label.Effect>
                     <DropShadowEffect Color="#FFECECEC"/>
                 </Label.Effect>
             </Label>
-            <Label x:Name="patient_Dossier" Content="DOSSIER" HorizontalAlignment="Left" Margin="0,23,0,0" VerticalAlignment="Top" Width="253" FontWeight="Bold" FontSize="14">
+            <Label x:Name="patient_Dossier" Content="DOSSIER" HorizontalAlignment="Left" Margin="0,23,0,0" VerticalAlignment="Top" Width="284" FontWeight="Bold" FontSize="14">
                 <Label.Effect>
                     <DropShadowEffect Color="#FFE2DEDE"/>
                 </Label.Effect>
             </Label>
         </Grid>
-        <ListView HorizontalAlignment="Left" Height="100" Margin="40,86,0,0" VerticalAlignment="Top" Width="273">
+        <ListView x:Name="list_studies" HorizontalAlignment="Left" Height="100" Margin="40,86,0,0" VerticalAlignment="Top" Width="273">
             <ListView.View>
-                <GridView>
-                    <GridViewColumn/>
-                </GridView>
+                <GridView/>
             </ListView.View>
         </ListView>
 
