@@ -91,8 +91,7 @@ namespace IMPORTCD
                         patient_Name.Content = "CD NON-CONFORME";
                         patient_Dossier.Content = "VEUILLEZ CONTACTER LA FILMOTHEQUE";
                         CDROM.Commands.Eject();
-                    }
-                    
+                    }           
                              
                 
             }
